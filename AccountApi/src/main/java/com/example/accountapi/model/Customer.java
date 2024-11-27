@@ -3,19 +3,24 @@ package com.example.accountapi.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class User {
-    private Long id;
+public class Customer {
+    private String customerId;
     private String name;
     private String surname;
     private List<Account> accounts = new ArrayList<>();
 
-    // Getters and setters
-    public Long getId() {
-        return id;
+    public Customer(String customerId, String name, String surname) {
+        this.customerId = customerId;
+        this.name = name;
+        this.surname = surname;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
     }
 
     public String getName() {
@@ -41,5 +46,7 @@ public class User {
     public void setAccounts(List<Account> accounts) {
         this.accounts = accounts;
     }
+    
+    
        
 }

@@ -4,26 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Account {
-    private Long accountId;
-    private Long userId;
+    private String accountId;
     private double balance;
     private List<Transaction> transactions = new ArrayList<>();
 
-    // Getters and Setters
-    public Long getAccountId() {
+    public Account(String accountId, double balance) {
+        this.accountId = accountId;
+        this.balance = balance;
+    }
+
+    public String getAccountId() {
         return accountId;
     }
 
-    public void setAccountId(Long accountId) {
+    public void setAccountId(String accountId) {
         this.accountId = accountId;
-    }
-
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
     }
 
     public double getBalance() {
@@ -38,7 +33,9 @@ public class Account {
         return transactions;
     }
 
-    public void addTransaction(Transaction transaction) {
-        this.transactions.add(transaction);
+    public void setTransactions(List<Transaction> transactions) {
+        this.transactions = transactions;
     }
+    
+    
 }

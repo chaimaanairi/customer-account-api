@@ -2,26 +2,24 @@ package com.example.accountapi.model;
 import java.time.LocalDateTime;
 
 public class Transaction {
-    private Long transactionId;
-    private Long accountId;
+    private String transactionId;
     private double amount;
-    private LocalDateTime transactionDate;
+    private String type; // e.g., "DEPOSIT" or "WITHDRAWAL"
+    private LocalDateTime date;
 
-    // Getters and Setters
-    public Long getTransactionId() {
+    public Transaction(String transactionId, double amount, String type, LocalDateTime date) {
+        this.transactionId = transactionId;
+        this.amount = amount;
+        this.type = type;
+        this.date = date;
+    }
+
+    public String getTransactionId() {
         return transactionId;
     }
 
-    public void setTransactionId(Long transactionId) {
+    public void setTransactionId(String transactionId) {
         this.transactionId = transactionId;
-    }
-
-    public Long getAccountId() {
-        return accountId;
-    }
-
-    public void setAccountId(Long accountId) {
-        this.accountId = accountId;
     }
 
     public double getAmount() {
@@ -32,12 +30,21 @@ public class Transaction {
         this.amount = amount;
     }
 
-    public LocalDateTime getTransactionDate() {
-        return transactionDate;
+    public String getType() {
+        return type;
     }
 
-    public void setTransactionDate(LocalDateTime transactionDate) {
-        this.transactionDate = transactionDate;
+    public void setType(String type) {
+        this.type = type;
     }
+
+    public LocalDateTime getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDateTime date) {
+        this.date = date;
+    }
+    
     
 }
