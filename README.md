@@ -36,10 +36,4 @@ This project provides an API to manage customer accounts along with a simple fro
 - **Frontend**:
   - A modern browser (Chrome, Firefox, etc.)
 
-## Installation
 
-### Backend (API)
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/chaimaanairi/customer-account-api.git
-   cd customer-account-api
