@@ -7,6 +7,7 @@ package com.example.accountapi;
 import com.example.accountapi.model.Account;
 import com.example.accountapi.model.Customer;
 import com.example.accountapi.service.AccountService;
+import org.junit.jupiter.api.Assertions;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -72,10 +73,15 @@ public class AccountServiceTest {
         assertEquals("Johnson", fetchedCustomer.getSurname());
     }
     
-    @Test(expected = RuntimeException.class)
-    public void testCreateAccount_WithNonExistentCustomer() {
-        // Try to create an account for a non-existent customer
-        accountService.createAccount("nonexistent", 500);
-    }
+    @Test
+public void testCreateAccount_WithNonExistentCustomer() {
+    // Expect a RuntimeException when creating an account for a non-existent customer
+    RuntimeException exception = Assertions.assertThrows(
+        RuntimeException.class,
+        () -> accountService.createAccount("nonexistent", 500)
+    );
+    Assertions.assertEquals("Customer not found", exception.getMessage());
+}
+
 }
 
